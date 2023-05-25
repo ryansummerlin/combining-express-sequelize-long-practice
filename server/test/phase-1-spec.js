@@ -22,7 +22,7 @@ describe('Phase 1 Specs - Tree', () => {
       }
       expect.fail('Invalid Data Allowed in DB (check your constraints)');
     });
-  
+
     it('does not allow duplicate `tree` attribute values', async () => {
       try {
         await models.Tree.create({ tree: 'orange' });
@@ -32,7 +32,7 @@ describe('Phase 1 Specs - Tree', () => {
       }
       expect.fail('Invalid Data Allowed in DB (check your constraints)')
     });
-  
+
     it('does not allow `heightFt` attribute values less than 0', async () => {
       try {
         await models.Tree.create({ tree: 'lemon', heightFt: -1 })
@@ -41,7 +41,7 @@ describe('Phase 1 Specs - Tree', () => {
       }
       expect.fail('Invalid Data Allowed in DB (check your validations)')
     });
-  
+
     it('does not allow `groundCircumferenceFt` attribute values less than 0', async () => {
       try {
         await models.Tree.create({ tree: 'lime', groundCircumferenceFt: -1 })
